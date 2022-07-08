@@ -111,17 +111,18 @@ async def next_page(bot, query):
         btn.append(
             [
                 InlineKeyboardButton("⏪ BACK", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🗓 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
+                InlineKeyboardButton(f"🌹 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("NEXT ⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
             [
-                InlineKeyboardButton("⭕️ Movie ⭕️", url="https://t.me/kpmovielist"),
-                InlineKeyboardButton("⭕️ Series ⭕️", url="https://t.me/MKSMAINCHANNEL")
+                InlineKeyboardButton('💠 Movie Update 💠', url='https://t.me/kpmovielist'),
+                InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
             ])
 
     btn.insert(0, [
-        InlineKeyboardButton("🤖 Check Bot PM First 🤖", url=f"https://t.me/{temp.U_NAME}")
+            InlineKeyboardButton('💠 Update Channel 💠', url='https://t.me/Movie_By_KP'),
+            InlineKeyboardButton('💠 VIP All Series 💠', url='https://t.me/kpautoreply_bot')
     ])
     try:
         await query.edit_message_reply_markup(
@@ -512,8 +513,16 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('YouTube', callback_data='music'),
             ],[
             InlineKeyboardButton('Zombies', callback_data='zombies'),
+            ],[
+            InlineKeyboardButton('💠 English Series 💠', url='https://t.me/Serieslists'), 
+            InlineKeyboardButton('💠 Thai Series  💠', url='https://t.me/ThaiSeries_MTS')],[
+            InlineKeyboardButton('💠 Chinese Series 💠', url='https://t.me/Chinese_Series_MCS'), 
+            InlineKeyboardButton('💠 Anime Series 💠', url='https://t.me/Anime_Animation_Series')],[
+            InlineKeyboardButton('💠 Korea Series  💠', url='https://t.me/MKSVIPLINK'),
+            InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup'),
+            ],[
+            InlineKeyboardButton('💠 VIP All Series  💠', url='https://t.me/Kpautoreply_bot'),
             InlineKeyboardButton('« Back', callback_data='start'),
-            InlineKeyboardButton('Adult Bot 🔞', url='https://t.me/AdultSearchXBot')
         ]]
         reply_markup = InlineKeyboardMarkup(buttons)
         await query.message.edit_text(
@@ -599,8 +608,8 @@ async def cb_handler(client: Client, query: CallbackQuery):
         )
     elif query.data == "auto_manual":
         buttons = [[
-            InlineKeyboardButton('auto', callback_data='autofilter'),
-            InlineKeyboardButton('manual', callback_data='manualfilter')
+            InlineKeyboardButton('Auto', callback_data='autofilter'),
+            InlineKeyboardButton('Manual', callback_data='manualfilter')
             ],[
             InlineKeyboardButton('« Back', callback_data='help'),
             InlineKeyboardButton('Close ✗', callback_data='close_data')
@@ -952,7 +961,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
     ])
     btn.insert(0, [
-            InlineKeyboardButton('💠 UpDate Channel 💠', url='https://t.me/Movie_By_KP'),
+            InlineKeyboardButton('💠 Update Channel 💠', url='https://t.me/Movie_By_KP'),
             InlineKeyboardButton('💠 VIP All Series 💠', url='https://t.me/kpautoreply_bot')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
@@ -991,7 +1000,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b><a href='https://t.me/Movie_By_KP'>© IMDb (Series & Movies) Studio</a></b>\n\n<b>✍️ Note:</b> n\n<b>👩🏻‍💻 Requested By : <i><b>{message.from_user.mention}</b>\n\n<b>🚀 Answer Group : <i><b>{message.chat.title}</b></i>\n</s>"
+        cap = f"<b>ကျနော်ရှာတွေ့တာပြပေးထားပါတယ်ခင်ဗျာ\n 🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b><a href='https://t.me/Movie_By_KP'>© IMDb (Series & Movies) Studio</a></b>\n\n<b>✍️ Note:</b> n\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<b><a href="https://t.me/mksviplink">© MKS Channel</a></b></i>\n</s>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
