@@ -466,7 +466,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             InlineKeyboardButton('⭕️ Help', callback_data='help'),
             InlineKeyboardButton('About ⭕️', callback_data='about')
             ],[
-            InlineKeyboardButton('🕵️ Search here Movie 🕵️', switch_inline_query_current_chat='')
+            InlineKeyboardButton('💠 Update Channel 💠', url='https://t.me/Movie_By_KP')
             ],[
             InlineKeyboardButton('💠 English Series 💠', url='https://t.me/Serieslists'), 
             InlineKeyboardButton('💠 Thai Series  💠', url='https://t.me/ThaiSeries_MTS')],[
@@ -952,7 +952,8 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
     ])
     btn.insert(0, [
-            InlineKeyboardButton('💠 UpDate Channel 💠', url='https://t.me/Movie_By_KP')
+            InlineKeyboardButton('💠 UpDate Channel 💠', url='https://t.me/Movie_By_KP'),
+            InlineKeyboardButton('💠 VIP All Series 💠', url='https://t.me/kpautoreply_bot')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
@@ -990,7 +991,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>🎬 Title:</b> {search}\n</b>\n<b><a href='https://t.me/+q9NMdy0rY10zZWZl'>© IMDb (Series & Movies) Studio</a></b>\n\n<b>✍️ Note:</b> <s>This message will be Auto-deleted after 10 hours to avoid copyright issues.</s>"
+        cap = f"<b>🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b><a href='https://t.me/Movie_By_KP'>© IMDb (Series & Movies) Studio</a></b>\n\n<b>✍️ Note:</b> n\n<b>👩🏻‍💻 Requested By : <i><b>{message.from_user.mention}</b>\n\n<b>🚀 Answer Group : <i><b>{message.chat.title}</b></i>\n</s>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
@@ -1006,12 +1007,12 @@ async def auto_filter(client, msg, spoll=False):
             await message.delete()
         except Exception as e:
             logger.exception(e)
-            fek = await message.reply_photo(photo="https://telegra.ph/file/82b5bbbab6d5e5593b6b2.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+            fek = await message.reply_photo(photo="https://telegra.ph/file/d0274a6ab10485f000b2a.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
             await asyncio.sleep(36000)
             await fek.delete()
             await msg.delete()
     else:
-        fuk = await message.reply_photo(photo="https://telegra.ph/file/8b42f6caf6ef5fd76766f.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
+        fuk = await message.reply_photo(photo="https://telegra.ph/file/081a64a3c7120cb9ed9e4.jpg", caption=cap, reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
         await asyncio.sleep(36000)
         await fuk.delete()
         await msg.delete()
