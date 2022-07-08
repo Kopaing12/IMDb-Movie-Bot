@@ -946,7 +946,6 @@ async def auto_filter(client, msg, spoll=False):
         req = message.from_user.id if message.from_user else 0
         btn.append(
             [InlineKeyboardButton(text=f"🌹 1/{round(int(total_results) / 10)}", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
