@@ -1,18 +1,16 @@
 class Script(object):
-    START_TXT = """Hello {},
+    START_TXT = """မင်္ဂလာပါ  {},
 
-My name is <a href=https://t.me/{}>{}</a>!
+ကျွန်တော်ကတော့ <a href=https://t.me/{}>{} ဖြစ်ပါတယ်။</a>!
 
-<b>I can provide Movies. A Telegram Auto Filter Bot. Its Easy To Use Me :)
-
-Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
+<b>ကျွန်တော်ကို Group ‌နဲ့ Movie Channel များတွင် Admin ထည့်ပြီး မည်သူမဆိုလွတ်လပ်စွာအသုံးပြုနိုင်ပါတယ်။..</b>"""
 
     HELP_TXT = """Hey {}
 
 <b>Here Is The Help For My Commands.</b>"""
 
-    ABOUT_TXT = """<b>➥ My name: {}
-➥ Creator: <a href='https://t.me/zautekm'>Zaute Km</a>
+    ABOUT_TXT = """<b>➥ ငါ့နာမည်က : {}
+➥ Creator: <a href='https://t.me/KOPAING15'>Ko PAing Lay</a>
 ➥ Library: <a href='https://docs.pyrogram.org/'>Pyrogram</a>
 ➥ Language: Python 𝟹
 ➥ Data Base: <a href='https://www.mongodb.com/'>MongoDB</a>
@@ -20,14 +18,14 @@ Just Add me to Your Group As Admin, Hit The Help Button For More Info..</b>"""
 ➥ Build Status: v2.0.1 [ Beta ]"""
 
     SOURCE_TXT = """<b>Source:</b>
-IMDb is a Open source project.
-Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 👈</a>
+MKS & KP is a Close source project.
+Source: <a href='https://t.me/kopaing15t'>Owner- Click here 👈</a>
 
 <b>DEVS:</b>
-- <a href='https://t.me/josprojects'>Jos Projects</a>
+- <a href='https://t.me/kopaing15'>BOT Owner</a>
 
 <b>SUPPORT GROUP</b>
-- <a href='https://t.me/+y53tWFUw6Q43NzE9'>Jos Movie Club</a>"""
+- <a href='https://t.me/mks_requestgroup'>Join Movie Group </a>"""
 
     MANUALFILTER_TXT = """Help: <b>Filters</b>
 
@@ -54,7 +52,7 @@ Source: <a href='https://github.com/josprojects/tgmoviebot'>GitHub - Click here 
 3. Buttons should be properly parsed as markdown format.
 
 <b>URL buttons:</b>
-<code>[Button Text](buttonurl:https://t.me/josprojects)</code>
+<code>[Button Text](buttonurl:https://t.me/mksmainchannel)</code>
 
 <b>Alert buttons:</b>
 <code>[Button Text](buttonalert:This is an alert message)</code>"""
@@ -251,7 +249,7 @@ This module only works for my admins
 
     FORCESUB_TXT = """**♦️ READ THIS INSTRUCTION ♦️**
 
-__🗣 In Order To Get The Movie Requested By You in Our Groups, You Will Have To Join Our Official Channel First. After That, Try Accessing That Movie Again From Our Group. I'll Send You That Movie Privately 🙈__
+__🗣မိတ်‌ဆွေကြည့်ချင်တဲ့ဇာတ်ကားကို ပို့ပေးဖို့အတွက် Join Channel ကို Join ထားဖို့လိုပါတယ်။ Channel လေးကို Join ပြီးရင် Try Again 👈 Tap me လေးကို နှိပ်လိုက်ရင် 👌 ရပါပြီး။ 🙈@KOPAING15 ** 🙈__
 
 **👇 JOIN THIS CHANNEL & TRY AGAIN 👇**"""
 
@@ -279,7 +277,7 @@ Some URLs is Shortner
 • /short <code>(link)</code> - I will send the shorted links.
 
 <b>Example:</b>
-<code>/short https://t.me/josprojects</code>
+<code>/short https://t.me/mksviplink</code>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
@@ -308,7 +306,7 @@ Music download modules, for those who love music.
 
 <b>YouTube Thumbnail Download</b>
 • /ytthumb (youtube link)
-<b>Example:</b> <code>/ytthumb https://youtu.be/h6PtzFYaMxQ</code>
+<b>Example:</b> <code>/ytthumb https://t.me/mksviplink</code>
 
 <b>NOTE:</b>
 • IMDb should have admin privillage.
