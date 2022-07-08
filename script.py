@@ -19,7 +19,7 @@ class Script(object):
 
     SOURCE_TXT = """<b>Source:</b>
 MKS & KP is a Close source project.
-Source: <a href='https://t.me/kopaing15t'>Owner- Click here 👈</a>
+Source: <a href='https://t.me/kopaing15'>Owner- Click here 👈</a>
 
 <b>DEVS:</b>
 - <a href='https://t.me/kopaing15'>BOT Owner</a>
