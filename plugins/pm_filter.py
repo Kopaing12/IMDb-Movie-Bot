@@ -1000,7 +1000,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>ကျနော်ရှာတွေ့တာပြပေးထားပါတယ်ခင်ဗျာ\n 🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b>\n\n<b>✍️ Note:</b> n\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b><a href='https://t.me/Movie_By_KP'>© MKS & KP Channel</a></b></s>"
+        cap = f"<b>Hello<i><b>{message.from_user.mention}</b>\nကျနော်ရှာတွေ့တာပြပေးထားပါတယ်ခင်ဗျာ\n\n 🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<a href='https://t.me/Movie_By_KP'>© MKS & KP Channel</a></b></s>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
