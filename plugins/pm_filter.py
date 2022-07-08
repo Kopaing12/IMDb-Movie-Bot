@@ -929,7 +929,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🗓 1/{round(int(total_results) / 10)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"🌹 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}"),
              InlineKeyboardButton(text="NEXT ⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
@@ -945,7 +945,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton('💠C-Series💠', url='https://t.me/Chinese_Series_MCS')],[
             InlineKeyboardButton('💠 Anime Series 💠', url='https://t.me/Anime_Animation_Series'),
             InlineKeyboardButton('💠 Korea Series  💠', url='https://t.me/MKSVIPLINK'),
-            InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
+            InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup'),
     ])
     btn.insert(0, [
         InlineKeyboardButton("💠 Update Channel 💠', url='https://t.me/Movie_By_KP")
