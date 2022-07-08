@@ -23,7 +23,12 @@ async def start(client, message):
     if message.chat.type in ['group', 'supergroup']:
         buttons = [
             [
-                InlineKeyboardButton('⭕️ Updates ⭕️', url='https://t.me/josprojects')
+            InlineKeyboardButton('💠 English Series 💠', url='https://t.me/Serieslists'), 
+            InlineKeyboardButton('💠 Thai Series  💠', url='https://t.me/ThaiSeries_MTS')],[
+            InlineKeyboardButton('💠 Chinese Series 💠', url='https://t.me/Chinese_Series_MCS'), 
+            InlineKeyboardButton('💠 Anime Series 💠', url='https://t.me/Anime_Animation_Series')],[
+            InlineKeyboardButton('💠 Korea Series  💠', url='https://t.me/MKSVIPLINK'),
+            InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
             ],
             [
                 InlineKeyboardButton('🛠️ Help', url=f"https://t.me/{temp.U_NAME}?start=help"),
@@ -69,12 +74,12 @@ async def start(client, message):
         try:
             invite_link = await client.create_chat_invite_link(int(AUTH_CHANNEL))
         except ChatAdminRequired:
-            logger.error("Make sure Bot is admin in Forcesub channel")
+            logger.error("🗣မိတ်‌ဆွေကြည့်ချင်တဲ့ဇာတ်ကားကို ပို့ပေးဖို့အတွက် Join Channel ကို Join ထားဖို့လိုပါတယ်။ Channel လေးကို Join ပြီးရင် Try Again 👈 Tap me လေးကို နှိပ်လိုက်ရင် 👌 ရပါပြီး။ 🙈@KOPAING15 **")
             return
         btn = [
             [
                 InlineKeyboardButton(
-                    "🤖 Join Updates Channel", url=invite_link.invite_link
+                    "💠 Join Channel 💠", url=invite_link.invite_link
                 )
             ]
         ]
