@@ -45,7 +45,7 @@ def a(client, message: Message):
     for i in message.command[1:]:
         query += ' ' + str(i)
     print(query)
-    m = message.reply(f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id)
+    m = message.reply(f"**🔎🔎 ရှာပေးနေပါတယ် ☺️ .. \nဒီသီချင်းကို 👉 ** `{urlissed}`", reply_to_message_id=reply_id)
     ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = []
@@ -76,21 +76,23 @@ def a(client, message: Message):
 
         except Exception as e:
             print(e)
-            m.edit('**Found Literary Noting. Please Try Another Song or Use Correct Spelling!**')
+            m.edit('**သီချင်းနာမည်ပါ မရေး‌ဘဲနဲ့ ခေါင်းခေါက်လိုက်အုံးမယ် 🙄!\n* ခေါင်းခေါက်ရတာလဲ လက်တွေနာနေပြီး 🌝 </a>\nMusic ရှာနည်း\n /song music name \n{ ဥပမာ - /song သေမလိုပဲ } *')
             return
     except Exception as e:
         m.edit(
-            "**Enter Song Name with Command**❗\nFor Example: `/song Alone Marshmellow`"
+            "**♦️ Music ရှာနည်း /song music name { ဥပမာ - /song သေမလိုပဲ } `"
         )
         print(str(e))
         return
-    m.edit("`Uploading... Please Wait...`")
+    m.edit(
+       "`🔎  ရှာတွေတာ တင်ပေးနေပါတယ် \nခဏစောင့်ပါနော် 😊😊... Upload......❣️`",    
+    )
     try:
         with youtube_dl.YoutubeDL(ydl_opts) as ydl:
             info_dict = ydl.extract_info(link, download=False)
             audio_file = ydl.prepare_filename(info_dict)
             ydl.process_info(info_dict)
-        rep = f'🏷 <b>Title:</b> <a href="{link}">{title}</a>'
+        rep = f'🎵 <b> 𝑻𝒊𝒕𝒍𝒆:</b> <a href="{link}">{title}</a>\n\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎  ရှာပေးသူ       : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<b><a href="https://t.me/mksviplink">© MKS Channel</a></b>' 
         secmul, dur, dur_arr = 1, 0, duration.split(':')
         for i in range(len(dur_arr)-1, -1, -1):
             dur += (int(dur_arr[i]) * secmul)
@@ -99,7 +101,7 @@ def a(client, message: Message):
         m.delete()
         message.delete()
     except Exception as e:
-        m.edit('**An Error Occured. Please Report This To @JOSPSupport !!**')
+        m.edit('**ဘာမှန်းမသိတဲ့ Error လေးတက်သွားပါတယ် 🥲 ပြန်ရှာကြည့်ပါနော် @KOPaing15 !!**')
         print(e)
     try:
         os.remove(audio_file)
@@ -144,8 +146,8 @@ async def progress(current, total, message, start, type_of_ps, file_name=None):
         time_to_completion = round((total - current) / speed) * 1000
         estimated_total_time = elapsed_time + time_to_completion
         progress_str = "{0}{1} {2}%\n".format(
-            "".join("▣" for i in range(math.floor(percentage / 10))),
-            "".join("□" for i in range(10 - math.floor(percentage / 10))),
+            "".join("❣️" for i in range(math.floor(percentage / 10))),
+            "".join("🧐" for i in range(10 - math.floor(percentage / 10))),
             round(percentage, 2),
         )
 
@@ -254,10 +256,10 @@ async def vsong(client, message: Message):
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
 
     pablo = await client.send_message(
-        message.chat.id, f"**🔎 Searching..** `{urlissed}`", reply_to_message_id=reply_id
+        message.chat.id, f"**🔎🔎 ရှာပေးနေပါတယ် ☺️ ..\nဒီသီချင်းကို 👉 ** `{urlissed}`", reply_to_message_id=reply_id
     )
     if not urlissed:
-        await pablo.edit("Invalid Command Syntax Please Check help Menu To Know More!")
+        await pablo.edit("သီချင်းနာမည်ပါ မရေး‌ဘဲနဲ့ ခေါင်းခေါက်လိုက်အုံးမယ် 🙄!\n* ခေါင်းခေါက်ရတာလဲ လက်တွေနာနေပြီး 🌝 \nVideo ရှာနည်း \n/video music name\n{ ဥပမာ - /video သေမလိုပဲ }")
         return
 
     search = SearchVideos(f"{urlissed}", offset=1, mode="dict", max_results=1)
@@ -287,12 +289,12 @@ async def vsong(client, message: Message):
         with YoutubeDL(opts) as ytdl:
             ytdl_data = ytdl.extract_info(url, download=True)
     except Exception as e:
-        await event.edit(event, f"**Download Failed** \n**Error :** `{str(e)}`")
+        await event.edit(event, f"**Down တာအဆင်မပြေဘူး 😭** \n**Error :** `{str(e)}`")
         return
     c_time = time.time()
     file_stark = f"{ytdl_data['id']}.mp4"
     capy = f"""
-**🏷️ Video :** [{thum}]({mo})
+**🎵 𝑻𝒊𝒕𝒍𝒆 :** [{thum}]({mo})</a>\n\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<b><a href="https://t.me/mksviplink">© MKS Channel</a></b>
 """
     await client.send_video(
         message.chat.id, reply_to_message_id=reply_id,
@@ -306,7 +308,7 @@ async def vsong(client, message: Message):
         progress_args=(
             pablo,
             c_time,
-            f"**📥 Download** `{urlissed}`",
+            f"**📥 Down နေပါတယ် ခဏစောင့်ပါနော် 😊 😊** ...Upload......`{urlissed}`",
             file_stark,
         ),
     )
