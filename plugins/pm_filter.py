@@ -940,15 +940,11 @@ async def auto_filter(client, msg, spoll=False):
         )
 
     btn.insert(0, [
-            InlineKeyboardButton('E-Series', url='https://t.me/Serieslists'), 
-            InlineKeyboardButton('C-Series', url='https://t.me/Chinese_Series_MCS')],[
-            InlineKeyboardButton('A-Series', url='https://t.me/Anime_Animation_Series'),
-            InlineKeyboardButton('K-Series', url='https://t.me/MKSVIPLINK')],[
-            InlineKeyboardButton('Group', url='https://t.me/MKS_REQUESTGroup'),
-            InlineKeyboardButton('T-Series', url='https://t.me/ThaiSeries_MTS')
+        InlineKeyboardButton("💠 Korean Series 💠", url="https://t.me/mksviplink"),
+        InlineKeyboardButton("💠 VIP All Series 💠 ", url="https://t.me/kpautoreply_bot")
     ])
     btn.insert(0, [
-        InlineKeyboardButton("💠 Update Channel 💠', url='https://t.me/Movie_By_KP")
+        InlineKeyboardButton("💠 Update Channel ', url='https://t.me/Movie_By_KP")
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
     imdb = await get_poster(search, file=(files[0]).file_name) if settings["imdb"] else None
