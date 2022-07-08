@@ -941,11 +941,11 @@ async def auto_filter(client, msg, spoll=False):
 
     btn.insert(0, [
             InlineKeyboardButton('E-Series', url='https://t.me/Serieslists'), 
-            InlineKeyboardButton('T-Series', url='https://t.me/ThaiSeries_MTS'),
             InlineKeyboardButton('C-Series', url='https://t.me/Chinese_Series_MCS')],[
             InlineKeyboardButton('A-Series', url='https://t.me/Anime_Animation_Series'),
-            InlineKeyboardButton('K-Series', url='https://t.me/MKSVIPLINK'),
+            InlineKeyboardButton('K-Series', url='https://t.me/MKSVIPLINK')],[
             InlineKeyboardButton('Group', url='https://t.me/MKS_REQUESTGroup'),
+            InlineKeyboardButton('T-Series', url='https://t.me/ThaiSeries_MTS')
     ])
     btn.insert(0, [
         InlineKeyboardButton("💠 Update Channel 💠', url='https://t.me/Movie_By_KP")
