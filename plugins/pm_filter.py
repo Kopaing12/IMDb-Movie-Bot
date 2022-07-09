@@ -360,7 +360,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
                 "😁 တစ်ခြားသူရှာထားတဲ့ဇာတ်ကားကို မိတ်ဆွေနှိပ်ခွင့်မရှိပါ။ကိုယ်ဘာသာ Group တွင်အသစ်ရိုက်လိုက်ပါ။;",
-                show_alert=)
+                show_alert=Flase)
 
         if not files_:
             return await query.answer('No such file exist.')
