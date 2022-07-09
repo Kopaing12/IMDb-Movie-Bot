@@ -340,7 +340,27 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 "Your connected group details ;\n\n",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
-    
+        elif "alertmessage" in query.data:
+        grp_id = query.message.chat.id
+        i = query.data.split(":")[1]
+        keyword = query.data.split(":")[2]
+        reply_text, btn, alerts, fileid = await find_filter(grp_id, keyword)
+        if alerts is not None:
+            alerts = ast.literal_eval(alerts)
+            alert = alerts[int(i)]
+            alert = alert.replace("\\n", "\n").replace("\\t", "\t")
+            await query.answer(alert, show_alert=True)
+    if query.data.startswith("file"):
+        ident, file_id = query.data.split("#")
+        files_ = await get_file_details(file_id)
+        user = query.message.reply_to_message.from_user.id
+        ad_user = query.from_user.id
+        if int(ad_user) in ADMINS:
+            pass
+        elif int(user) != 0 and query.from_user.id != int(user):
+            return await query.answer(
+                "နည်းပညာများအရ တစ်ခြား Member ရှာထားသော ဇာတ်ကားများကို နှိပ်ခွင့်မရှိပါ။ မိတ်ဆွေကိုယ်တိုင် Group တွင်ဇာတ်ကားနာမည်အသစ်ရိုက်ရှာပေးပါ။ ကျေးဇူးပါခင်ဗျာ။",
+                show_alert=True)
 
         if not files_:
             return await query.answer('No such file exist.')
