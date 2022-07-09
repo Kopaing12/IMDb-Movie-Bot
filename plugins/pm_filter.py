@@ -46,7 +46,7 @@ async def next_page(bot, query):
         pass
     elif int(req) not in [query.from_user.id, 0]:
         return await query.answer(
-            "😁 hi ",
+            "😁 တစ်ခြားသူရှာထားတဲ့ဇာတ်ကားကို မိတ်ဆွေနှိပ်ခွင့်မရှိပါ။ကိုယ်ဘာသာ Group တွင်အသစ်ရိုက်လိုက်ပါ။ ",
             show_alert=False)
     try:
         offset = int(offset)
@@ -349,7 +349,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             alerts = ast.literal_eval(alerts)
             alert = alerts[int(i)]
             alert = alert.replace("\\n", "\n").replace("\\t", "\t")
-            await query.answer(alert, show_alert=True)
+            await query.answer(alert, show_alert=False)
     if query.data.startswith("file"):
         ident, file_id = query.data.split("#")
         files_ = await get_file_details(file_id)
