@@ -340,7 +340,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
                 "Your connected group details ;\n\n",
                 reply_markup=InlineKeyboardMarkup(buttons)
             )
-        elif "alertmessage" in query.data:
+    elif "alertmessage" in query.data:
         grp_id = query.message.chat.id
         i = query.data.split(":")[1]
         keyword = query.data.split(":")[2]
@@ -359,7 +359,7 @@ async def cb_handler(client: Client, query: CallbackQuery):
             pass
         elif int(user) != 0 and query.from_user.id != int(user):
             return await query.answer(
-                "နည်းပညာများအရ တစ်ခြား Member ရှာထားသော ဇာတ်ကားများကို နှိပ်ခွင့်မရှိပါ။ မိတ်ဆွေကိုယ်တိုင် Group တွင်ဇာတ်ကားနာမည်အသစ်ရိုက်ရှာပေးပါ။ ကျေးဇူးပါခင်ဗျာ။",
+                "All right, but this is not yours.;\nNice Try! But, This Was Not Your Request, Request Yourself;",
                 show_alert=True)
 
         if not files_:
