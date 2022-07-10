@@ -89,27 +89,27 @@ async def next_page(bot, query):
             for file in files
         ]
 
-    if 0 < offset <= 5:
+    if 0 < offset <= 10:
         off_set = 0
     elif offset == 0:
         off_set = None
     else:
-        off_set = offset - 5
+        off_set = offset - 10
     if n_offset == 0:
         btn.append(
             [InlineKeyboardButton("『BACK』", callback_data=f"next_{req}_{key}_{off_set}"),
-             InlineKeyboardButton(f"🔰 {round(int(offset) / 5) + 1} / {round(total / 5)}",
+             InlineKeyboardButton(f"🔰 {round(int(offset) / 10) + 1} / {round(total / 10)}",
              callback_data="pages")]
         )
     elif off_set is None:
         btn.append(
-            [InlineKeyboardButton(f"🔰{round(int(offset) / 5) + 1} / {round(total / 5)}", callback_data="pages"),
+            [InlineKeyboardButton(f"🔰{round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
              InlineKeyboardButton("『NEXT』", callback_data=f"next_{req}_{key}_{n_offset}")])
     else:
         btn.append(
             [
                 InlineKeyboardButton("⏪『BACK』", callback_data=f"next_{req}_{key}_{off_set}"),
-                InlineKeyboardButton(f"🔰 {round(int(offset) / 5) + 1} / {round(total / 5)}", callback_data="pages"),
+                InlineKeyboardButton(f"🔰 {round(int(offset) / 10) + 1} / {round(total / 10)}", callback_data="pages"),
                 InlineKeyboardButton("『NEXT』⏩", callback_data=f"next_{req}_{key}_{n_offset}")]
             )
     btn.insert(0,
@@ -937,7 +937,7 @@ async def auto_filter(client, msg, spoll=False):
         BUTTONS[key] = search
         req = message.from_user.id if message.from_user else 0
         btn.append(
-            [InlineKeyboardButton(text=f"🔰 1/{round(int(total_results) / 5)}", callback_data="pages"),
+            [InlineKeyboardButton(text=f"🔰 1/{round(int(total_results) / 10)}", callback_data="pages"),
              InlineKeyboardButton(text="『 NEXT 』⏩", callback_data=f"next_{req}_{key}_{offset}")]
         )
     else:
@@ -990,7 +990,7 @@ async def auto_filter(client, msg, spoll=False):
             **locals()
         )
     else:
-        cap = f"<b>Hello<i><b>{message.from_user.mention}</b>\nကျနော်ရှာတွေ့တာပြပေးထားပါတယ်ခင်ဗျာ\n\n 🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<a href='https://t.me/Movie_By_KP'>© MKS & KP Channel</a></b></s>"
+        cap = f"<b>Hello  <i><b>{message.from_user.mention}</b>\nကျနော်ရှာတွေ့တာပြပေးထားပါတယ်ခင်ဗျာ\n\n 🎬 ဇာတ်ကားနာမည်:</b> {search}\n</b>\n<b>🙋  တောင်းဆိုသူ  : <i><b>{message.from_user.mention}</b>\n\n<b>🔎   ရှာပေးသူ     : <i><b>{message.chat.title}</b>\n\n📤 Uploaded By : Ko Paing <b>\n<a href='https://t.me/Movie_By_KP'>© MKS & KP Channel</a></b></s>"
     if imdb and imdb.get('poster'):
         try:
             hehe = await message.reply_photo(photo=imdb.get('poster'), caption=cap[:1024], reply_to_message_id=reply_id, reply_markup=InlineKeyboardMarkup(btn))
