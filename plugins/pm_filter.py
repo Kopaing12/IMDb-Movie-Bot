@@ -943,7 +943,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         btn.append(
             [InlineKeyboardButton(text=" 🔰 1/1", callback_data="pages"),
-             InlineKeyboardButton(text="Check PM!", url=f"https://t.me/{temp.U_NAME}")]
+             InlineKeyboardButton('Thank You🙏🏻', url="https://t.me/MKSVIPLINK")]
         )
 
     btn.insert(0, [
@@ -951,7 +951,7 @@ async def auto_filter(client, msg, spoll=False):
             InlineKeyboardButton('💠 Request Group 💠', url='https://t.me/MKS_REQUESTGroup')
     ])
     btn.insert(0, [
-            InlineKeyboardButton('💠 Update Channel 💠', url='https://t.me/Movie_By_KP'),
+            InlineKeyboardButton('💠 Join Channel 💠', url='https://t.me/Movie_By_KP'),
             InlineKeyboardButton('💠 VIP All Series 💠', url='https://t.me/kpautoreply_bot')
     ])
     reply_id = message.reply_to_message.message_id if message.reply_to_message else message.message_id
