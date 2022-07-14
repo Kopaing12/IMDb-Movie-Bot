@@ -943,7 +943,7 @@ async def auto_filter(client, msg, spoll=False):
     else:
         btn.append(
             [InlineKeyboardButton(text=" 🔰 1/1", callback_data="pages"),
-             InlineKeyboardButton('Thank You🙏🏻', url="https://t.me/MKSVIPLINK")]
+             InlineKeyboardButton('Thank You 🙏🏻', url="https://t.me/MKSVIPLINK")]
         )
 
     btn.insert(0, [
